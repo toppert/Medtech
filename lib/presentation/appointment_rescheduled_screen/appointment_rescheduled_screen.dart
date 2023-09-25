@@ -1,0 +1,9 @@
+import 'controller/appointment_rescheduled_controller.dart';import 'package:flutter/material.dart';import 'package:medtech/core/app_export.dart';import 'package:medtech/widgets/custom_elevated_button.dart';class AppointmentRescheduledScreen extends GetWidget<AppointmentRescheduledController> {const AppointmentRescheduledScreen({Key? key}) : super(key: key);
+
+@override Widget build(BuildContext context) { mediaQueryData = MediaQuery.of(context); return SafeArea(child: Scaffold(backgroundColor: theme.colorScheme.primaryContainer.withOpacity(1), body: Container(width: double.maxFinite, padding: EdgeInsets.symmetric(horizontal: 35.h, vertical: 20.v), child: Column(children: [CustomImageView(svgPath: ImageConstant.imgArrowdown, height: 100.adaptSize, width: 100.adaptSize), SizedBox(height: 18.v), Text("lbl_thank_you".tr, style: CustomTextStyles.titleLargeBlueA400), SizedBox(height: 20.v), Text("msg_appointment_rescheduled".tr, style: CustomTextStyles.titleLargeMedium), SizedBox(height: 20.v), SizedBox(width: 356.h, child: RichText(text: TextSpan(children: [TextSpan(text: "msg_you_rescheduled2".tr, style: theme.textTheme.bodyMedium), TextSpan(text: "msg_december_12_2022".tr, style: theme.textTheme.bodyMedium!.copyWith(decoration: TextDecoration.lineThrough)), TextSpan(text: "lbl_to".tr, style: theme.textTheme.bodyMedium), TextSpan(text: "msg_december_25_2022".tr, style: CustomTextStyles.titleSmallBlueA400_1)]), textAlign: TextAlign.center))])), bottomNavigationBar: CustomElevatedButton(height: 43.v, text: "lbl_done".tr, margin: EdgeInsets.only(left: 19.h, right: 19.h, bottom: 20.v), onTap: () {onTapDone();}))); } 
+/// Navigates to the appointments1Screen when the action is triggered.
+
+/// When the action is triggered, this function uses the [Get] package to
+/// push the named route for the appointments1Screen.
+onTapDone() { Get.toNamed(AppRoutes.appointments1Screen, ); } 
+ }
